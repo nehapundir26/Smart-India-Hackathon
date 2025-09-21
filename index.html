@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahaayya - Report Issues, Build Better Cities</title>
+    <title>Sahaayya - Smart Civic Issue Reporter</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,15 +13,20 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
+                <img src="blob:https://web.whatsapp.com/fd2d741a-72c9-400d-be67-189ec155e4f0">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>Sahaayya</span>
             </div>
-            <div class="nav-menu">
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#how-it-works" class="nav-link">How It Works</a>
-                <a href="#download" class="nav-link">Download</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
+            <!-- Add these links in the navbar -->
+<div class="nav-menu">
+    <a href="#login" class="nav-link">Login</a>
+    <a href="#features" class="nav-link">Features</a>
+    <a href="#how-it-works" class="nav-link">How It Works</a>
+    <a href="#reports" class="nav-link">Reports</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    
+</div>
+
             <div class="nav-toggle">
                 <span></span>
                 <span></span>
@@ -30,18 +35,53 @@
         </div>
     </nav>
 
+<!-- WELCOME PAGE -->
+<section id="welcome-page" class="welcome-section">
+    <h1>Welcome to Sahaayya!</h1>
+    <p>Smart Civic Issue Reporting for building better communities.</p>
+    <a href="#login" class="btn btn-primary">Login</a>
+</section>
+
+<!-- LOGIN Section -->
+<section id="login" class="login-section">
+    <div class="container">
+        <div class="login-card">
+            <h2 class="login-title">Login to Sahaayya</h2>
+            <p class="login-description">
+                Access your account to report, track, and manage civic issues.
+            </p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" id="login-email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login
+                </button>
+            </form>
+            <p class="login-note">
+                Don't have an account? <a href="#signup">Sign Up</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Report Civic Issues,<br>
-                    <span class="highlight">Build Better Cities</span>
+                    Smart Civic Issue Reporting,<br>
+                    <span class="highlight">Building Better Communities</span>
                 </h1>
                 <p class="hero-description">
-                    Help make Jharkhand cities smarter and more responsive. Report potholes, streetlight issues,
-                    garbage problems, and more with just a few taps. Your reports go directly to local authorities
-                    for quick resolution.
+                    Report civic issues with AI-powered classification, real-time tracking, and direct communication with local authorities. Join thousands of citizens making their cities smarter and more responsive.
                 </p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary">
@@ -55,15 +95,15 @@
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
-                        <div class="stat-number">10K+</div>
+                        <div class="stat-number">25K+</div>
                         <div class="stat-label">Issues Reported</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">85%</div>
+                        <div class="stat-number">92%</div>
                         <div class="stat-label">Resolution Rate</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">50+</div>
+                        <div class="stat-number">150+</div>
                         <div class="stat-label">Cities Covered</div>
                     </div>
                 </div>
@@ -77,16 +117,56 @@
                                 <div class="demo-title">Sahaayya</div>
                             </div>
                             <div class="demo-content">
-                                <div class="demo-camera">
-                                    <i class="fas fa-camera"></i>
-                                    <p>Take Photo of Issue</p>
-                                </div>
-                                <div class="demo-location">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <p>Auto-location Detected</p>
-                                </div>
-                                <div class="demo-submit">
+                                <div class="demo-screen active" id="welcome-screen">
+                                    <h3>Welcome!</h3>
+                                    <p>What can we do for you?</p>
                                     <button class="demo-btn">Report Issue</button>
+                                    <button class="demo-btn secondary">Check Issue Status</button>
+                                    <button class="demo-btn secondary">Connect to Authority</button>
+                                    <button class="demo-btn secondary">Local Issues</button>
+                                </div>
+                                <div class="demo-screen" id="report-screen">
+                                    <h3>Report a new Issue</h3>
+                                    <div class="form-group">
+                                        <label>Issue name</label>
+                                        <input type="text" placeholder="Enter issue details...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Upload Image</label>
+                                        <button class="upload-btn">Upload Image</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Geotag Location</label>
+                                        <button class="location-btn">Detect Location</button>
+                                    </div>
+                                    <button class="demo-btn primary">REPORT</button>
+                                </div>
+                                <div class="demo-screen" id="status-screen">
+                                    <h3>Report Status</h3>
+                                    <div class="status-item">
+                                        <div class="status-info">
+                                            <h4>Garbage overflow</h4>
+                                            <p>Location: xyz colony</p>
+                                            <p>Volume: 777 reports</p>
+                                            <span class="status-badge resolved">Status: Resolved</span>
+                                        </div>
+                                    </div>
+                                    <div class="status-item">
+                                        <div class="status-info">
+                                            <h4>Potholes</h4>
+                                            <p>Location: abc colony</p>
+                                            <p>Volume: 650 reports</p>
+                                            <span class="status-badge in-progress">Status: In Progress</span>
+                                        </div>
+                                    </div>
+                                    <div class="status-item">
+                                        <div class="status-info">
+                                            <h4>Garbage overflow</h4>
+                                            <p>Location: xyz colony</p>
+                                            <p>Volume: 577 reports</p>
+                                            <span class="status-badge pending">Status: Pending</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -96,13 +176,14 @@
         </div>
     </section>
 
+
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Powerful Features for Smart Cities</h2>
+                <h2 class="section-title">Comprehensive Civic Issue Management</h2>
                 <p class="section-description">
-                    Built with cutting-edge technology to make civic reporting effortless and effective
+                    Advanced features designed to streamline civic reporting and resolution
                 </p>
             </div>
             <div class="features-grid">
@@ -128,12 +209,32 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="feature-title">Real-time Updates</h3>
+                    <h3 class="feature-title">Real-time Status Tracking</h3>
                     <p class="feature-description">
-                        Track your reports in real-time. Get notifications when issues are
-                        acknowledged, in progress, or resolved by authorities.
+                        Track your reports with multiple status levels - Pending, In Progress,
+                        and Resolved. Get instant updates on issue resolution.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Local Issue Aggregation</h3>
+                    <p class="feature-description">
+                        View issues reported by other citizens in your area. See which problems
+                        are most prevalent and get collective resolution updates.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="feature-title">Direct Authority Contact</h3>
+                    <p class="feature-description">
+                        Connect directly with local authorities for urgent issues. Get immediate
+                        assistance when you need it most.
                     </p>
                 </div>
                 <div class="feature-card">
@@ -146,26 +247,6 @@
                         while ensuring accountability in the system.
                     </p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="feature-title">Analytics Dashboard</h3>
-                    <p class="feature-description">
-                        View comprehensive analytics on issue types, resolution times, and
-                        improvement trends across different areas.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="feature-title">Community Driven</h3>
-                    <p class="feature-description">
-                        Join a community of active citizens working together to improve
-                        their neighborhoods and cities across Jharkhand.
-                    </p>
-                </div>
             </div>
         </div>
     </section>
@@ -174,19 +255,19 @@
     <section id="how-it-works" class="how-it-works">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">How It Works</h2>
+                <h2 class="section-title">How Sahaayya Works</h2>
                 <p class="section-description">
-                    Reporting an issue is as simple as 1-2-3
+                    Four simple steps to report and track civic issues
                 </p>
             </div>
             <div class="steps-container">
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3 class="step-title">Capture the Issue</h3>
+                        <h3 class="step-title">Report New Issue</h3>
                         <p class="step-description">
-                            Take a clear photo of the civic issue you want to report.
-                            Our AI will automatically identify the type of problem.
+                            Use the app to report any civic issue with one or more images of the issue
+                            along with the location geotag which will be automatically attached to the photo.
                         </p>
                         <div class="step-icon">
                             <i class="fas fa-camera"></i>
@@ -196,26 +277,111 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3 class="step-title">Add Details</h3>
+                        <h3 class="step-title">Check Previous Reports</h3>
                         <p class="step-description">
-                            Provide additional context, severity level, and your location
-                            is automatically captured for precise reporting.
+                            Check previously reported issue's status and get real-time updates on
+                            resolution progress from local authorities.
                         </p>
                         <div class="step-icon">
-                            <i class="fas fa-edit"></i>
+                            <i class="fas fa-search"></i>
                         </div>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3 class="step-title">Submit & Track</h3>
+                        <h3 class="step-title">Contact Local Authority</h3>
                         <p class="step-description">
-                            Submit your report and track its progress. Get updates when
-                            authorities acknowledge and resolve the issue.
+                            For urgent situations, contact local authority representatives directly
+                            through the app for immediate assistance.
                         </p>
                         <div class="step-icon">
-                            <i class="fas fa-paper-plane"></i>
+                            <i class="fas fa-phone"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Track Local Issues</h3>
+                        <p class="step-description">
+                            Check other local issues reported by other users. These are segregated on
+                            the basis of volume of complaints of that specific issue.
+                        </p>
+                        <div class="step-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reports Section -->
+    <section id="reports" class="reports">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Reports & Issue Tracking</h2>
+                <p class="section-description">
+                    Comprehensive dashboard for monitoring civic issues and their resolution status
+                </p>
+            </div>
+            <div class="reports-container">
+                <div class="reports-sidebar">
+                    <h3>Reports submitted</h3>
+                    <div class="reports-menu">
+                        <div class="report-category active">
+                            <span class="category-icon"><i class="fas fa-fire"></i></span>
+                            <span class="category-text">Most Popular</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="reports-content">
+                    <div class="report-item">
+                        <div class="report-header">
+                            <h4>1. Garbage overflow</h4>
+                            <span class="location">Location: xyz colony</span>
+                        </div>
+                        <div class="report-details">
+                            <span class="volume">Volume: 777 reports</span>
+                            <span class="status-badge resolved">Status: Resolved</span>
+                        </div>
+                    </div>
+                    <div class="report-item">
+                        <div class="report-header">
+                            <h4>2. Potholes</h4>
+                            <span class="location">Location: abc colony</span>
+                        </div>
+                        <div class="report-details">
+                            <span class="volume">Volume: 650 reports</span>
+                            <span class="status-badge in-progress">Status: In Progress</span>
+                        </div>
+                    </div>
+                    <div class="report-item">
+                        <div class="report-header">
+                            <h4>3. Garbage overflow</h4>
+                            <span class="location">Location: xyz colony</span>
+                        </div>
+                        <div class="report-details">
+                            <span class="volume">Volume: 577 reports</span>
+                            <span class="status-badge pending">Status: Pending</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="reports-info">
+                    <div class="info-card">
+                        <h4>Issue Details</h4>
+                        <div class="issue-detail">
+                            <strong>Garbage overflow</strong><br>
+                            Volume: 777 reports<br>
+                            Status: <span class="status-badge resolved">Resolved</span><br>
+                            Location: Central Park<br>
+                            Reported on: 01-09-2025<br>
+                            Description: Large piles of uncollected garbage attracting stray animals and spreading foul smell.
+                        </div>
+                        <div class="issue-actions">
+                            <h5>Images submitted:</h5>
+                            <p>Recent updates: Issues escalated to city authority</p>
                         </div>
                     </div>
                 </div>
@@ -227,9 +393,9 @@
     <section id="download" class="download">
         <div class="container">
             <div class="download-content">
-                <h2 class="download-title">Ready to Make a Difference?</h2>
+                <h2 class="download-title">Ready to Make Your City Better?</h2>
                 <p class="download-description">
-                    Join thousands of citizens already using JH Civic Reporter to improve their communities.
+                    Join thousands of citizens already using Sahaayya to improve their communities.
                     Available on all major platforms.
                 </p>
                 <div class="download-buttons">
@@ -262,13 +428,13 @@
                 <div class="contact-info">
                     <h3 class="contact-title">Get in Touch</h3>
                     <p class="contact-description">
-                        Have questions about the app or want to provide feedback?
+                        Have questions about Sahaayya or want to provide feedback?
                         We'd love to hear from you.
                     </p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>support@jhcivicreporter.gov.in</span>
+                            <span>support@sahaayya.gov.in</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
@@ -325,6 +491,7 @@
                     <ul class="footer-links">
                         <li><a href="#features">Features</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#reports">Reports</a></li>
                         <li><a href="#download">Download</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
