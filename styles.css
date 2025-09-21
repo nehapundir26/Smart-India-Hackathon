@@ -104,6 +104,58 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Smooth scroll when anchor clicked */
+html {
+    scroll-behavior: smooth;
+}
+
+/* WELCOME PAGE */
+.welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+.welcome-section h1 { font-size: 3rem; margin-bottom: 24px; }
+.welcome-section p { font-size: 1.2rem; margin-bottom: 32px; }
+.welcome-section .btn { font-size: 1rem; }
+
+/* LOGIN SECTION */
+.login-section {
+    background: linear-gradient(135deg,  #667eea 0%,#764ba2 100%); /* Hero-like light background */
+    padding: 60px 20px;
+}
+.login-card {
+    max-width: 400px;
+    margin: 0 auto;
+    background: whitesmoke ;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.login-card h2 { margin-bottom: 16px; }
+.login-card p { margin-bottom: 24px; }
+.login-card input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+.login-card .btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+
+
 /* Hero Section */
 .hero {
     padding: 120px 0 80px;
@@ -300,10 +352,16 @@ body {
     cursor: pointer;
 }
 
+
+
+
+
+
+
 /* Features Section */
 .features {
     padding: 100px 0;
-    background: #f8fafc;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);;
 }
 
 .section-header {
@@ -314,13 +372,13 @@ body {
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1f2937;
+    color: white;
     margin-bottom: 16px;
 }
 
 .section-description {
     font-size: 1.1rem;
-    color: #6b7280;
+    color: white;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -374,7 +432,7 @@ body {
 /* How It Works Section */
 .how-it-works {
     padding: 100px 0;
-    background: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);;
 }
 
 .steps-container {
@@ -392,8 +450,8 @@ body {
 .step-number {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
+    background: white;
+    color: black;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -410,12 +468,12 @@ body {
 .step-title {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #1f2937;
+    color: white;
     margin-bottom: 12px;
 }
 
 .step-description {
-    color: #6b7280;
+    color: white;
     line-height: 1.6;
     margin-bottom: 16px;
 }
@@ -428,9 +486,126 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #667eea;
+    color: white;
     font-size: 1.2rem;
 }
+
+
+/* -------------------- Reports Section -------------------- */
+
+/* Reports Section Background */
+.reports {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 100px 0;
+}
+
+/* Reports Section Heading */
+.reports .section-header h2 {
+    color: white; /* Heading white */
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+/* Section description text */
+.reports .section-header p {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* Container for all reports content */
+.reports-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+/* Sidebar */
+.reports-sidebar {
+    flex: 1 1 250px;
+    background: white; /* Sidebar white */
+    color: black;      /* Text black */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.reports-sidebar h3 {
+    background: white;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.reports-menu .report-category {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: black;  /* Text black */
+    background: #fff; /* Background white */
+}
+
+.reports-menu .report-category.active,
+.reports-menu .report-category:hover {
+    background-color: #f0f0f0;
+}
+
+/* Reports List */
+.reports-content {
+    flex: 2 1 600px;
+}
+
+.reports-content .report-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: white; /* Card background white */
+    color: black;      /* Text black */
+}
+
+.report-header h4,
+.report-header .location,
+.report-details .volume {
+    color: black; /* Black text */
+}
+
+/* Status badges remain colored for visibility */
+.status-badge.resolved { background-color: #28a745; color: white; }
+.status-badge.in-progress { background-color: #ffc107; color: #212529; }
+.status-badge.pending { background-color: rgb(235, 8, 8); color: white; }
+
+/* Reports Info Card */
+.reports-info {
+    flex: 1 1 300px;
+}
+
+.info-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background: white; /* Card background white */
+    color: black;      /* Text black */
+    margin-bottom: 20px;
+}
+
+.info-card h4,
+.issue-detail,
+.issue-actions h5,
+.issue-actions p {
+    color: black; /* Black text */
+}
+
+
+
 
 /* Download Section */
 .download {
@@ -505,7 +680,8 @@ body {
 /* Contact Section */
 .contact {
     padding: 100px 0;
-    background: #f8fafc;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white; /* Text white */
 }
 
 .contact-content {
@@ -515,19 +691,21 @@ body {
     align-items: start;
 }
 
+/* Titles and description */
 .contact-title {
     font-size: 2rem;
     font-weight: 700;
-    color: #1f2937;
+    color: white; /* Title white */
     margin-bottom: 16px;
 }
 
 .contact-description {
-    color: #6b7280;
+    color: white; /* Description white */
     margin-bottom: 30px;
     line-height: 1.6;
 }
 
+/* Contact details */
 .contact-details {
     display: flex;
     flex-direction: column;
@@ -538,20 +716,22 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    color: #6b7280;
+    color: white; /* White text for contact items */
 }
 
 .contact-item i {
-    color: #667eea;
+    color: #fbbf24; /* Optional: make icons standout */
     font-size: 1.2rem;
     width: 20px;
 }
 
+/* Contact form remains unchanged */
 .contact-form {
     background: white;
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    color: black; /* Text inside form black */
 }
 
 .form-group {
@@ -578,6 +758,7 @@ body {
     resize: vertical;
     min-height: 120px;
 }
+
 
 /* Footer */
 .footer {
@@ -748,3 +929,4 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
